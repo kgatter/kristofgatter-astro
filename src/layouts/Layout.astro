@@ -13,38 +13,64 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/fonts/font.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
+		<nav></nav>
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+
+html, body {
+	--green: #6DFF69;
+	--purple: #F2CFEA;
+	--sand: #FFD89D;
+	--blue: #007bff;
+	--black: black;
+
+	--fontFamily: 'Graphik Web', sans-serif;
+	--fontSizeXL: 45px;
+	--fontSizeL: 30px;
+	--fontSizeM: 20px;
+	--fontSizeS: 14px;
+	--fontSizeXS: 10px;
+
+	--standardSpacing: 30px;
+
+	font-family: var(--fontFamily);
+	letter-spacing: -0.01em;
+	font-weight: 400;
+	color: var(--black);
+	h1, h2, h3, h4, h5 {
+		text-align: left;
+		font-weight: 400;
+		margin-bottom: 1.2em;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+
+	h1 {
+		font-size: var(--fontSizeXL);
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	p {
+	white-space: pre-wrap;
+	margin-bottom: 1em;
+
+	&:last-of-type {
+		margin-bottom: 2em;
 	}
+	}
+
+	b {
+	font-weight: 500;
+	}
+
+	svg {
+	& * {fill: currentColor;}
+	}
+
+}
+
 </style>
