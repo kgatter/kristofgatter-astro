@@ -1,21 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
 ---
 
 <Layout title="Kristof Gatter Digital Product Designer">
   <main>
-    <div style="display:flex">
+    <nav>
+      <span>Kristof Gatter <b>Digital Product Designer</b></span>
+    </nav>
+    <header>
       <div>
         <h1>I build digital products that feel right and make sense.</h1>
-        <a href="mailto:mail@kristofgatter.com">Get in Touch</a>
+        <a href="mailto:mail@kristofgatter.com" class="kgbutton">Get in Touch</a
+        >
       </div>
       <img
         class="portrait"
         src="images/portrait.png"
         alt="Kristof Gatter's Portrait"
       />
-    </div>
+    </header>
     <p>
       Digital product development is a complicated process. Thinking and working
       siloed can cause a lot of frustration for all people involved.<br />In my
@@ -25,7 +28,7 @@ import Card from "../components/Card.astro";
       developers and other stakeholders are all equally important in achieving
       the best results.
     </p>
-    <a>Read More About My Work</a>
+    <a href="/work" class="kgbutton purple">Read More About My Work</a>
     <p>
       Despite being a designer first, over the course of my career I have
       accumulated a lot of experience in mentoring – using design thinking
@@ -35,75 +38,75 @@ import Card from "../components/Card.astro";
       to map out user journeys in a workshop with other stakeholders or conduct
       in-person user interviews.
     </p>
-    <a>Read More About Mentoring</a>
-    <h2>Brands I Have Worked For</h2>
-    <h2>Agencies I Have Worked With</h2>
+    <a href="#" class="kgbutton sand">Read More About Mentoring</a>
+    <h2>References</h2>
+    <h3>Brands I Have Worked For</h3>
+    <img
+      width="843"
+      src="/images/workedfor.png"
+      alt="Mercedes-Benz, Modulor, solarisBank, Cantinio, Avec, Red Bull, DroidCon, Innogy Stiftung, Grace Accelerator, Kraftwerk City Accelerator Bremen, Golem.DE, Zuper, Zeiss, Wired Campus, EWE, eBay"
+    />
+    <h3>Agencies I Have Worked With</h3>
+    <img
+      width="843"
+      src="/images/workedwith.png"
+      alt="HackerBay, DesignIt, Ignore Gravity, Beluga Strategic Design, OX Collective"
+    />
   </main>
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    font-size: 20px;
-    line-height: 1.6;
+  main,
+  nav {
+    display: block;
+    margin: 0 auto;
   }
 
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
+  main {
+    font-size: var(--fontSizeXL);
+    padding: 0 1em;
+    max-width: 35em;
+    font-size: 30px;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+
+    & .kgbutton, & img {
+    margin-top: 1em;
+    margin-bottom: 5em;
+    }
   }
+
+  header {
+    display: flex;
+    padding: 4em 0;
+    justify-content: space-between;
+
+    & .kgbutton {
+      margin-bottom: 0;
+    }
+    & div {
+      max-width: 20em;
+    }
+  }
+
+  nav {
+    padding: 3em 0;
+    margin-top: -1em;
+    font-size: var(--fontSizeM);
+  }
+
   h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
+    line-height: 1.2em;
+    font-weight: 400;
+    letter-spacing: -0.01em;
     text-align: center;
-    margin-bottom: 1em;
+    text-align: left;
   }
+
+
 
   img.portrait {
     width: 250px;
     height: 250px;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
   }
 </style>

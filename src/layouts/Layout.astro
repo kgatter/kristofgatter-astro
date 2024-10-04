@@ -18,7 +18,6 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <nav></nav>
     <slot />
   </body>
 </html>
@@ -26,10 +25,13 @@ const { title } = Astro.props;
   html,
   body {
     --green: #6dff69;
+    --green-darker: #06e900;
     --purple: #f2cfea;
+    --purple-darker: #d76bbe;
     --sand: #ffd89d;
+    --sand-darker: #ffa51e;
     --blue: #007bff;
-    --black: black;
+    --black: #212529;
 
     --fontFamily: "Graphik Web", sans-serif;
     --fontSizeXL: 45px;
@@ -54,12 +56,54 @@ const { title } = Astro.props;
       margin-bottom: 1.2em;
     }
 
-    h1 {
-      font-size: var(--fontSizeXL);
+    nav {
+      padding: 3em 0;
+      margin-top: -1em;
+      font-size: var(--fontSizeM);
+      color: var(--black);
+
+      & .backlink {
+        position: relative;
+        display: inline-block;
+        color: var(--black);
+        margin-top: -0.15em;
+        margin-right: 0.7em;
+        transition: color 150ms;
+        text-decoration: none;
+
+        & svg {
+          margin-right: 0.5em;
+        }
+
+        &:hover {
+          color: #666;
+
+          svg {
+            transform: translateX(-10px);
+          }
+        }
+      }
     }
 
+    h1 {
+      font-size: var(--fontSizeXL);
+
+      line-height: 1.2em;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      text-align: center;
+      text-align: left;
+    }
+
+    & svg {
+      transition:
+        transform 250ms,
+        opacity 250ms;
+      transform: translateX(0);
+    }
+    
     p {
-      white-space: pre-wrap;
+      max-width: 26em;
       margin-bottom: 1em;
 
       &:last-of-type {
@@ -74,6 +118,40 @@ const { title } = Astro.props;
     svg {
       & * {
         fill: currentColor;
+      }
+    }
+
+    .kgbutton {
+      display: inline-block;
+      background-color: var(--green);
+      text-decoration: none;
+      color: var(--black);
+      font-size: 1em;
+      padding: 0.55em 2.5em 0.6em;
+      border-radius: 10px;
+      line-height: 1.5;
+      transition:
+        color 0.15s ease-in-out,
+        background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+
+      &:hover {
+        background-color: var(--green-darker);
+      }
+
+      &.purple {
+        background-color: var(--purple);
+        &:hover {
+          background-color: var(--purple-darker);
+        }
+      }
+
+      &.sand {
+        background-color: var(--sand);
+        &:hover {
+          background-color: var(--sand-darker);
+        }
       }
     }
   }
