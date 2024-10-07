@@ -38,17 +38,17 @@ import Layout from "../layouts/Layout.astro";
       to map out user journeys in a workshop with other stakeholders or conduct
       in-person user interviews.
     </p>
-    <a href="#" class="kgbutton sand">Read More About Mentoring</a>
+    <a href="/mentoring" class="kgbutton sand">Read More About Mentoring</a>
     <h2>References</h2>
     <h3>Brands I Have Worked For</h3>
     <img
-      width="843"
+      width="100%"
       src="/images/workedfor.png"
       alt="Mercedes-Benz, Modulor, solarisBank, Cantinio, Avec, Red Bull, DroidCon, Innogy Stiftung, Grace Accelerator, Kraftwerk City Accelerator Bremen, Golem.DE, Zuper, Zeiss, Wired Campus, EWE, eBay"
     />
     <h3>Agencies I Have Worked With</h3>
     <img
-      width="843"
+      width="100%"
       src="/images/workedwith.png"
       alt="HackerBay, DesignIt, Ignore Gravity, Beluga Strategic Design, OX Collective"
     />
@@ -63,12 +63,15 @@ import Layout from "../layouts/Layout.astro";
   }
 
   main {
-    font-size: var(--fontSizeXL);
     padding: 0 1em;
     max-width: 35em;
-    font-size: 30px;
+    font-size: var(--fontSizeL);
     letter-spacing: -0.01em;
     line-height: 1.4;
+
+    @media (max-width: 920px) {
+      font-size: var(--fontSizeM);
+    }
 
     & .kgbutton, & img {
     margin-top: 1em;
@@ -80,6 +83,29 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     padding: 4em 0;
     justify-content: space-between;
+
+    @media (max-width: 920px) {
+      padding-top: 1em;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      & div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 2;
+        flex: 1 1 auto;
+        h1 {
+          text-align: center;
+        }
+      }
+      & .portrait {
+        flex: 1 1 auto;
+        order: 1;
+        margin: 0;
+      }
+
+    }
 
     & .kgbutton {
       margin-bottom: 0;
@@ -96,17 +122,23 @@ import Layout from "../layouts/Layout.astro";
   }
 
   h1 {
+    font-size: var(--fontSizeXL);
     line-height: 1.2em;
     font-weight: 400;
     letter-spacing: -0.01em;
     text-align: center;
     text-align: left;
+    @media (max-width: 920px) {
+      font-size: var(--fontSizeL);
+    }
   }
-
-
 
   img.portrait {
     width: 250px;
     height: 250px;
+  }
+
+  img {
+    max-width: 843px;
   }
 </style>

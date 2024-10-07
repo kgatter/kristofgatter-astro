@@ -87,12 +87,12 @@ const { title } = Astro.props;
 
     h1 {
       font-size: var(--fontSizeXL);
-
       line-height: 1.2em;
       font-weight: 400;
       letter-spacing: -0.01em;
       text-align: center;
       text-align: left;
+      
     }
 
     & svg {
@@ -130,6 +130,11 @@ const { title } = Astro.props;
       padding: 0.55em 2.5em 0.6em;
       border-radius: 10px;
       line-height: 1.5;
+
+      @media (max-width: 920px) {
+        padding: 0.55em 1em 0.6em;
+      }
+
       transition:
         color 0.15s ease-in-out,
         background-color 0.15s ease-in-out,

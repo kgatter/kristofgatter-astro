@@ -1,0 +1,194 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Kristof Gatter Digital Product Designer">
+  <main>
+    <nav>
+      <a class="backlink" href="/">
+        <svg
+          width="21px"
+          height="16px"
+          viewBox="0 0 21 16"
+          class="NavBar_BackButton__3t0yV NavBar_visible__1T8WO"
+          ><g
+            id="Page-1"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+            ><g
+              id="work"
+              transform="translate(-55.000000, -50.000000)"
+              fill="#000000"
+              ><polygon
+                id="Fill-1"
+                points="76 56.8056164 59.4577827 56.8056164 64.5029478 51.6722974 62.8597354 50 55 58 62.8597354 66 64.5029478 64.3277026 59.4577827 59.1943836 76 59.1943836"
+              ></polygon></g
+            ></g
+          ></svg
+        >
+        <span>Kristof Gatter <b>Digital Product Designer</b> / Work</span>
+      </a>
+    </nav>
+    <header>
+      <div>
+        <h1>I work as part of a team.</h1>
+        <p>
+          The role of designer shoudn't be an isolated one. Working closely with
+          developers and other stakeholders on any given project is of paramount
+          importance to generating buy-in and achieving the best possible
+          results.
+        </p>
+        <p>
+          Read about a couple of examples below on how I strive to make this
+          happen in my own design projects and what I do to advance the cause of
+          agile, siloless digital product creation in general.
+        </p>
+        <a href="mailto:mail@kristofgatter.com" class="kgbutton">Get in Touch</a
+        >
+      </div>
+    </header>
+    <section class="work-item">
+      <h1>Teaching</h1>
+      <div class="description">
+        <p>
+          Because I believe you can't be a good digital product designer without
+          understanding and using the underlying technologies, I have created a
+          course curriculum and a bespoke teaching app in order to teach web
+          tech to students studying visual communcations at the Berlin
+          University of Arts, my alma mater.
+        </p><p>
+          The course ran 2013-2017, and utilized a custom web-app running on
+          node.js / socket.io to bring interactive exercises and code examples
+          directly on the students’ computers’ screens.
+        </p><p>
+          Developing the app and the coursework was part of my own diploma at
+          the university in 2014.
+        </p><p>
+          I was also mentor-in-residence at Startup Institute, an adult
+          education startup based in Boston, during their brief tenure in
+          Berlin, teaching a course on UX and human centered design.
+        </p>
+        <p>
+          More recently, I have returned to academia co-teaching a digital
+          branding course at MOME (Moholy-Nagy University of Arts and Design
+          Budapest) for first- and second-year students.
+        </p>
+      </div>
+      <div class="illustration">
+        <img
+          width="100%"
+          src="/images/work/udk.jpg"
+          alt="Picture of students at my class at the University of Arts Berlin"
+        />
+      </div>
+    </section>
+    <section class="work-item">
+      <h1>Innovation Workshops</h1>
+      <div class="description">
+        <p>
+          I regularly participate as a design mentor in workshops for startups
+          and established companies interested in innovation – e.g. the
+          accelerator camp Power to Idea in cooperation with the online magazine
+          Gründerszene and the innovation agency Ignore Gravity seen in the
+          photo. I usually help participants with input on visual stroytelling,
+          creating pitch presentations and mock-ups.
+        </p>
+      </div>
+      <div class="illustration">
+        <img
+          width="100%"
+          src="/images/work/dessau.jpg"
+          alt="Picture of me and others working at a workshop organized as part of accelerator for startups in Dessau"
+        />
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main,
+  nav {
+    display: block;
+    margin: 0 auto;
+  }
+
+  main {
+    font-size: var(--fontSizeXL);
+    padding: 0 1em;
+    max-width: 35em;
+    font-size: 30px;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+
+    & .kgbutton,
+    & img {
+      margin-top: 1em;
+      margin-bottom: 5em;
+    }
+
+    & .work-item {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 3em;
+
+      &:last-of-type {
+        margin-bottom: 15em;
+      }
+      & h1 {
+        flex: 1 0 100%;
+        margin-bottom: 0.5em;
+      }
+      & .description,
+      & .illustration {
+        flex: 1 1 50%;
+      }
+
+      & .description {
+        p,
+        a {
+          font-size: var(--fontSizeM);
+        }
+        p {
+          margin-right: 2.5em;
+        }
+        a.work-link {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          color: var(--black);
+          & svg {
+            margin-left: 0.4em;
+          }
+          &:hover {
+            color: var(--blue);
+            & svg {
+              transform: translateX(5px);
+            }
+          }
+        }
+      }
+
+      & .illustration {
+        position: relative;
+        top: -0.6em;
+      }
+    }
+
+    & .work-link {
+    }
+  }
+
+  header {
+    padding: 4em 0;
+    justify-content: space-between;
+
+    & .kgbutton {
+      margin-bottom: 0;
+    }
+    & h1 {
+      max-width: 20em;
+    }
+  }
+</style>
