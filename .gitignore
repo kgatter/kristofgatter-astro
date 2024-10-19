@@ -3,6 +3,7 @@ dist/
 
 # generated types
 .astro/
+public/portfolios/
 
 # dependencies
 node_modules/
