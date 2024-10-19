@@ -40,7 +40,7 @@ const { title } = Astro.props;
     --fontSizeS: 14px;
     --fontSizeXS: 10px;
 
-    @media (max-width: 684px) {
+    @media (max-width: 1023px) {
       --fontSizeXL: 30px;
       --fontSizeL: 20px;
       --fontSizeM: 16px;
@@ -69,6 +69,9 @@ const { title } = Astro.props;
       margin-top: -1em;
       font-size: var(--fontSizeM);
       color: var(--black);
+      @media (max-width: 684px) {
+        text-align: center;
+      }
 
       & .backlink {
         position: relative;
@@ -81,6 +84,10 @@ const { title } = Astro.props;
 
         & svg {
           margin-right: 0.5em;
+          @media (max-width: 1023px) {
+            transform: scale(0.7);
+            transform-origin: bottom;
+          }
         }
 
         &:hover {
@@ -88,6 +95,10 @@ const { title } = Astro.props;
 
           svg {
             transform: translateX(-10px);
+            @media (max-width: 1023px) {
+              transform: scale(0.7) translateX(-7px);
+              transform-origin: bottom;
+            }
           }
         }
       }
@@ -138,7 +149,7 @@ const { title } = Astro.props;
       border-radius: 10px;
       line-height: 1.5;
 
-      @media (max-width: 920px) {
+      @media (max-width: 684px) {
         padding: 0.55em 1em 0.6em;
       }
 
