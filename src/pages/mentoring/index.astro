@@ -115,10 +115,9 @@ import Layout from "../../layouts/Layout.astro";
   }
 
   main {
-    font-size: var(--fontSizeXL);
+    font-size: var(--fontSizeL);
     padding: 0 1em;
     max-width: 35em;
-    font-size: 30px;
     letter-spacing: -0.01em;
     line-height: 1.4;
 
@@ -132,6 +131,10 @@ import Layout from "../../layouts/Layout.astro";
       display: flex;
       flex-wrap: wrap;
       margin-top: 3em;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
 
       &:last-of-type {
         margin-bottom: 15em;
