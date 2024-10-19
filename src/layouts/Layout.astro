@@ -46,9 +46,10 @@ const { title } = Astro.props;
       --fontSizeM: 17px;
       --fontSizeS: 12px;
       --fontSizeXS: 9px;
+      --standardSpacing: 30px;
     }
 
-    --standardSpacing: 30px;
+    --standardSpacing: 20px;
 
     font-family: var(--fontFamily);
     letter-spacing: -0.01em;
@@ -125,10 +126,6 @@ const { title } = Astro.props;
       font-size: var(--fontSizeL);
       max-width: 26em;
       margin-bottom: 1em;
-
-      &:last-of-type {
-        margin-bottom: 2em;
-      }
     }
 
     b {
