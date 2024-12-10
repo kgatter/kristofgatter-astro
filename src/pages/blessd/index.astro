@@ -1,0 +1,190 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import react from "@astrojs/react";
+import {
+  IconLetterB,
+  IconLetterC,
+  IconLetterD,
+  IconLetterE,
+  IconLetterL,
+  IconLetterR,
+  IconLetterS,
+  IconLetterU,
+  IconArrowLeft,
+  IconAccessible,
+} from "@tabler/icons-react";
+---
+
+<Layout title="Kristof Gatter Digital Product Designer">
+  <main>
+    <nav>
+      <a class="backlink" href="/">
+        <span>Blessd</span>
+      </a>
+    </nav>
+    <!-- <header></header> -->
+    <section class="logo">
+      <div>
+        <!-- <IconLetterB size={32} /> -->
+        <IconLetterR size={32} />
+      </div>
+      <div>
+        <!-- <IconLetterL size={32} /> -->
+        <IconLetterU size={32} />
+      </div>
+      <div>
+        <!-- <IconLetterE size={32} /> -->
+        <IconLetterS size={32} />
+      </div>
+      <div>
+        <!-- <IconLetterS size={32} /> -->
+        <IconLetterE size={32} />
+      </div>
+      <div>
+        <!-- <IconLetterS size={32} /> -->
+        <IconLetterC size={32} />
+      </div>
+      <div>
+        <!-- <IconLetterD size={32} /> -->
+        <IconLetterD size={32} />
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  section.logo {
+    --step: 16px;
+    /* B | C | R */
+    --position-1: translate(0px, 0px);
+
+    /* L | U | U */
+    --position-2: translate(calc(-1 * var(--step)), calc(2 * var(--step)));
+
+    /* E | R | S */
+    --position-3: translate(calc(1 * var(--step)), calc(2 * var(--step)));
+
+    /* S | S | E */
+    --position-4: translate(calc(-2 * var(--step)), calc(4 * var(--step)));
+
+    /* S | E | C */
+    --position-5: translate(0px, calc(4 * var(--step)));
+
+    /* D | D | D */
+    --position-6: translate(calc(2 * var(--step)), calc(4 * var(--step)));
+
+    & div {
+      transition: 500ms ease-in-out transform;
+    }
+
+    & div:nth-child(1) {
+      transform: var(--position-1);
+    }
+    & div:nth-child(2) {
+      transform: var(--position-2);
+    }
+    & div:nth-child(3) {
+      transform: var(--position-3);
+    }
+    & div:nth-child(4) {
+      transform: var(--position-4);
+    }
+    & div:nth-child(5) {
+      transform: var(--position-5);
+    }
+    & div:nth-child(6) {
+      transform: var(--position-6);
+    }
+
+    &.cursed {
+      & div:nth-child(1) {
+        transform: var(--position-3);
+      }
+      & div:nth-child(2) {
+        transform: var(--position-2);
+      }
+      & div:nth-child(3) {
+        transform: var(--position-4);
+      }
+      & div:nth-child(4) {
+        transform: var(--position-5);
+      }
+      & div:nth-child(5) {
+        transform: var(--position-1);
+      }
+      & div:nth-child(6) {
+        transform: var(--position-6);
+      }
+    }
+
+    & div {
+      position: absolute;
+      left: 128px;
+    }
+  }
+
+  main,
+  nav {
+    display: block;
+    margin: 0 auto;
+    padding-top: 2em;
+  }
+
+  main {
+    font-size: var(--fontSizeL);
+    padding: 0 1em;
+    max-width: 35em;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+
+    & .kgbutton,
+    & img {
+      margin-top: 1em;
+      margin-bottom: 5em;
+      @media (max-width: 684px) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  header {
+    padding: 4em 0;
+    justify-content: space-between;
+
+    & .kgbutton {
+      margin-bottom: 0;
+    }
+    & h1 {
+      max-width: 20em;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.getElementsByClassName("work-item");
+
+    // Add a class to body when JS is active
+    document.body.classList.add("js-active");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("focus");
+            console.log("focus");
+          } else {
+            entry.target.classList.remove("focus");
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is in view
+    );
+
+    // sections.forEach((section) => observer.observe(section));
+    for (let i = 0; i < sections.length; i++) {
+      console.log("work item nr" + String(i));
+      observer.observe(sections[i]);
+    }
+  });
+</script>
