@@ -147,6 +147,9 @@ import Layout from "../layouts/Layout.astro";
   img.portrait {
     width: 250px;
     height: 250px;
+    /* The PNG is a circle baked onto a white square — mask it to a real
+       circle so no white corners show in dark mode. */
+    border-radius: 50%;
   }
 
   img {
