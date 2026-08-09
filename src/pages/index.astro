@@ -43,12 +43,14 @@ import Layout from "../layouts/Layout.astro";
     <h2>References</h2>
     <h3>Brands I Have Worked For</h3>
     <img
+      class="logos"
       width="100%"
       src="/images/workedfor.png"
       alt="Mercedes-Benz, Modulor, solarisBank, Cantinio, Avec, Red Bull, DroidCon, Innogy Stiftung, Grace Accelerator, Kraftwerk City Accelerator Bremen, Golem.DE, Zuper, Zeiss, Wired Campus, EWE, eBay"
     />
     <h3>Agencies I Have Worked With</h3>
     <img
+      class="logos"
       width="100%"
       src="/images/workedwith.png"
       alt="HackerBay, DesignIt, Ignore Gravity, Beluga Strategic Design, OX Collective"
@@ -149,5 +151,11 @@ import Layout from "../layouts/Layout.astro";
 
   img {
     max-width: 843px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    img.logos {
+      filter: invert(1);
+    }
   }
 </style>

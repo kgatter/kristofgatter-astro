@@ -422,6 +422,7 @@ import Layout from "../../layouts/Layout.astro";
 
   main > .kgbutton {
     margin-top: 1em;
+    margin-bottom: 2em;
   }
 
   .job {
@@ -499,6 +500,10 @@ import Layout from "../../layouts/Layout.astro";
     :global(body) {
       width: auto;
       margin: 0;
+      /* The printed document is always light, regardless of the device's
+         color scheme. */
+      --black: #212529;
+      --background: #fff;
     }
     .no-print {
       display: none !important;
