@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import MeshBackdrop from "../../components/mesh/MeshBackdrop.astro";
 ---
 
 <Layout
@@ -7,6 +8,7 @@ import Layout from "../../layouts/Layout.astro";
   description="Selected work by Kristof Gatter: Netlock, Shapr3D, Sparetech, improveme.io, GotPhoto, Atlantis KY1, Avec, Modulor and Small Improvements."
 >
   <main>
+    <MeshBackdrop variant="lively" fixed scrollPan />
     <nav>
       <a class="backlink" href="/">
         <svg width="21px" height="16px" viewBox="0 0 21 16"
@@ -30,7 +32,7 @@ import Layout from "../../layouts/Layout.astro";
         <span>Kristof Gatter <b>Digital Product Designer</b> / Work</span>
       </a>
     </nav>
-    <header>
+    <header data-backdrop="page">
       <div>
         <h1>I have a methodical and pragmatic approach to my work.</h1>
         <p>
@@ -49,7 +51,7 @@ import Layout from "../../layouts/Layout.astro";
         >
       </div>
     </header>
-    <section class="work-item">
+    <section class="work-item" data-backdrop="mesh">
       <h1>Principal Design Engineer @ Netlock (2026 —)</h1>
       <div class="description">
         <p>
@@ -87,7 +89,7 @@ import Layout from "../../layouts/Layout.astro";
         />
       </div>
     </section>
-    <section class="work-item">
+    <section class="work-item" data-backdrop="page">
       <h1>Product Designer @ Shapr3D (2025 — 2026)</h1>
       <div class="description">
         <p>
@@ -423,6 +425,15 @@ import Layout from "../../layouts/Layout.astro";
     max-width: 35em;
     letter-spacing: -0.01em;
     line-height: 1.4;
+    isolation: isolate;
+    color: rgb(var(--backdrop-ink));
+    transition: color 1500ms ease-out;
+
+    & nav,
+    & nav :global(.backlink) {
+      color: rgb(var(--backdrop-ink));
+      transition: color 1500ms ease-out;
+    }
 
     & .kgbutton,
     & img {
@@ -472,7 +483,8 @@ import Layout from "../../layouts/Layout.astro";
           display: flex;
           align-items: center;
           text-decoration: none;
-          color: var(--black);
+          color: rgb(var(--backdrop-ink));
+          transition: color 1500ms ease-out;
           & svg {
             margin-left: 0.4em;
           }
@@ -518,6 +530,17 @@ import Layout from "../../layouts/Layout.astro";
     }
     & h1 {
       max-width: 20em;
+    }
+  }
+</style>
+
+<style is:global>
+  :root {
+    --backdrop-ink: 33 37 41;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --backdrop-ink: 248 249 250;
     }
   }
 </style>
