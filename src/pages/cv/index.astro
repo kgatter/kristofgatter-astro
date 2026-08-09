@@ -19,15 +19,14 @@ import Layout from "../../layouts/Layout.astro";
       </a>
     </nav>
 
-    <header class="cv-header">
+    <header class="cv-header print-only">
       <div>
         <p>Reuven I. Kristof Gatter (Budapest, 1986)</p>
         <p>Digital Product Designer <b>Curriculum Vitae</b></p>
       </div>
       <p class="contact">
         <a href="mailto:mail@kristofgatter.com">mail@kristofgatter.com</a><br />
-        <a href="https://www.kristofgatter.com">www.kristofgatter.com</a><br />
-        +49 176 84736084
+        <a href="https://www.kristofgatter.com">www.kristofgatter.com</a>
       </p>
     </header>
 
@@ -414,6 +413,9 @@ import Layout from "../../layouts/Layout.astro";
 </Layout>
 
 <style>
+  /* Screen styles reuse the site's existing scale only: same main block as
+     /work (fontSizeL base, 35em measure), detail text at fontSizeM like the
+     work-item descriptions. No new font sizes. */
   main,
   nav {
     display: block;
@@ -422,78 +424,46 @@ import Layout from "../../layouts/Layout.astro";
   }
 
   main {
-    max-width: 52em;
-    padding: 0 1em 10em;
-    font-size: var(--fontSizeS);
+    font-size: var(--fontSizeL);
+    padding: 0 1em;
+    max-width: 35em;
     letter-spacing: -0.01em;
-    line-height: 1.5;
+    line-height: 1.4;
   }
 
-  .cv-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2em;
-    margin: 2em 0 3em;
-
-    & p {
-      font-size: var(--fontSizeM);
-      max-width: none;
-      margin-bottom: 0.2em;
-    }
-    & .contact {
-      font-size: var(--fontSizeS);
-      text-align: right;
-      line-height: 1.6;
-      & a {
-        color: var(--black);
-        text-decoration: none;
-      }
-    }
-    @media (max-width: 684px) {
-      flex-direction: column;
-      & .contact {
-        text-align: left;
-      }
-    }
+  .print-only {
+    display: none;
   }
 
   .intro {
-    margin-bottom: 4em;
+    padding: 2em 0;
     & p {
       font-size: var(--fontSizeM);
-      max-width: 33em;
     }
     & .kgbutton {
       margin-top: 1em;
     }
   }
 
-  h2 {
-    font-size: var(--fontSizeM);
-    margin: 3em 0 1.5em;
-  }
-
   .job {
     display: grid;
-    grid-template-columns: 15em 1fr;
-    column-gap: 2.5em;
-    margin-bottom: 2.5em;
+    /* Column split follows the reference CV document (~1/4 : 3/4). */
+    grid-template-columns: 1fr 3fr;
+    column-gap: 1em;
+    margin-top: 1.5em;
 
     @media (max-width: 684px) {
       grid-template-columns: 1fr;
-      row-gap: 0.7em;
     }
 
     & h3 {
-      font-size: var(--fontSizeS);
+      font-size: var(--fontSizeM);
       font-weight: 500;
-      margin: 0 0 0.7em;
+      margin-bottom: 0.5em;
     }
     & .stint {
-      font-size: var(--fontSizeS);
+      font-size: var(--fontSizeM);
       max-width: none;
-      margin-bottom: 0.7em;
       & b {
         font-weight: 500;
       }
@@ -504,6 +474,7 @@ import Layout from "../../layouts/Layout.astro";
       padding: 0;
     }
     & li {
+      font-size: var(--fontSizeM);
       position: relative;
       padding-left: 1.2em;
       margin-bottom: 0.4em;
@@ -518,23 +489,23 @@ import Layout from "../../layouts/Layout.astro";
   .closing {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3em;
-    margin-top: 4em;
+    gap: 1em;
+    margin-bottom: 15em;
 
     @media (max-width: 684px) {
       grid-template-columns: 1fr;
     }
-    & h2 {
-      margin-top: 0;
-    }
     & p {
-      font-size: var(--fontSizeS);
+      font-size: var(--fontSizeM);
       max-width: none;
       margin-bottom: 1em;
     }
   }
 
   @media print {
+    /* Print reproduces the old two-column CV document: A4, its margins, and
+       its type sizes (12px headings / 9.5px body). These values come from
+       that reference PDF, not the web design system. */
     @page {
       size: A4;
       margin: 16mm 14mm;
@@ -550,29 +521,66 @@ import Layout from "../../layouts/Layout.astro";
     .no-print {
       display: none !important;
     }
+    .print-only {
+      display: flex;
+    }
     main {
       /* Redefining the site's font-size custom props here cascades to all
          descendants without needing global selectors. */
-      --fontSizeM: 12px;
-      --fontSizeS: 9.5px;
+      --fontSizeM: 9.5px;
       max-width: 100%;
       padding: 0;
-      font-size: var(--fontSizeS);
+      font-size: 9.5px;
+      line-height: 1.45;
     }
     .cv-header {
-      margin-top: 0;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 12px;
+      margin-bottom: 6mm;
+      & p {
+        font-size: 12px;
+        max-width: none;
+        margin-bottom: 0.2em;
+      }
+      & .contact {
+        font-size: 9.5px;
+        text-align: right;
+        line-height: 1.6;
+        & a {
+          color: var(--black);
+          text-decoration: none;
+        }
+      }
     }
     .intro {
-      margin-bottom: 2em;
+      padding: 0;
+      margin-bottom: 6mm;
+      & p {
+        font-size: 12px;
+        max-width: 33em;
+      }
     }
-    .job,
-    .closing section {
+    h2 {
+      font-size: 12px;
+      margin: 6mm 0 4mm;
+    }
+    .job {
+      column-gap: 6mm;
+      margin-top: 0;
+      margin-bottom: 5mm;
       break-inside: avoid;
+    }
+    .closing {
+      gap: 6mm;
+      margin-bottom: 0;
+      & section {
+        break-inside: avoid;
+      }
     }
     h2 {
       break-after: avoid;
     }
-    .cv-header .contact a,
     .intro a {
       text-decoration: none;
     }
