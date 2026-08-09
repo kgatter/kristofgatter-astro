@@ -1,0 +1,19 @@
+# Kristof Gatter
+
+> Personal site of Kristof Gatter, a digital product designer who delivers features end-to-end, from UX concepts and prototypes to production code. Currently Principal Design Engineer at Netlock, a Hungarian certificate authority and one of the EU's qualified trust service providers. Contact: mail@kristofgatter.com
+
+Key facts:
+
+- Current role: Principal Design Engineer at Netlock (netlock.com), since April 2026
+- Previous roles: Product Designer at Shapr3D (2025-2026), Lead Product Designer at Sparetech (2022-2025), Senior Product Designer at workstreams.ai (2022), Product Design Lead at GotPhoto (2019-2021), UX/UI Developer & Designer at Small Improvements (2015-2016)
+- Self-employed work: improveme.io co-founder (2023-2026), freelance consulting for Hackerbay, Modulor and others, lecturer at the University of the Arts Berlin
+- Education: Dipl.-Designer (equivalent to MA), University of the Arts Berlin
+- Skills: design systems, usability testing, scenario-based design, UI development (React, Next.js, SwiftUI, HTML/CSS), workshop facilitation, mentoring
+
+## Pages
+
+- [Home](https://www.kristofgatter.com/): introduction and design philosophy
+- [Work](https://www.kristofgatter.com/work): selected projects with descriptions
+- [CV](https://www.kristofgatter.com/cv): full curriculum vitae as a web page
+- [CV as PDF](https://www.kristofgatter.com/KristofGatterCV.pdf): two-page PDF version with machine-readable text
+- [Mentoring](https://www.kristofgatter.com/mentoring): workshops, teaching and mentoring experience

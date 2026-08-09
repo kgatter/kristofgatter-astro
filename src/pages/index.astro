@@ -1,8 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Kristof Gatter",
+  jobTitle: "Digital Product Designer",
+  url: "https://www.kristofgatter.com",
+  email: "mailto:mail@kristofgatter.com",
+  worksFor: {
+    "@type": "Organization",
+    name: "Netlock",
+    url: "https://www.netlock.com",
+  },
+  sameAs: ["https://github.com/kgatter"],
+  knowsAbout: [
+    "Product Design",
+    "Design Systems",
+    "UX Research",
+    "Usability Testing",
+    "UI Development",
+    "Design Engineering",
+  ],
+};
 ---
 
 <Layout title="Kristof Gatter Digital Product Designer">
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(personSchema)}
+  />
   <main>
     <nav>
       <span>Kristof Gatter <b>Digital Product Designer</b></span>
