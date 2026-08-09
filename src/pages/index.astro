@@ -29,6 +29,7 @@ import Layout from "../layouts/Layout.astro";
       the best results.
     </p>
     <a href="/work" class="kgbutton purple">Read More About My Work</a>
+    <a href="/cv" class="kgbutton">Check out my CV</a>
     <p>
       Despite being a designer first, over the course of my career I have
       accumulated a lot of experience in mentoring – using design thinking
@@ -78,6 +79,13 @@ import Layout from "../layouts/Layout.astro";
       font-size: var(--fontSizeL);
       margin-top: 1em;
       margin-bottom: 5em;
+    }
+
+    & .kgbutton {
+      margin-right: 0.5em;
+      @media (max-width: 684px) {
+        margin-bottom: 1em;
+      }
     }
   }
 
