@@ -30,7 +30,13 @@ import Layout from "../../layouts/Layout.astro";
       </p>
     </header>
 
-    <section class="intro">
+    <a
+      class="kgbutton no-print"
+      href="/KristofGatterCV.pdf"
+      download="Kristof Gatter CV.pdf">Download as PDF</a
+    >
+
+    <section class="intro print-only">
       <p>
         Hi there! I’m a Product Designer who thrives on creating simple
         solutions for complex software. Most of my recent work has been in B2B
@@ -44,11 +50,6 @@ import Layout from "../../layouts/Layout.astro";
         user research, lead stakeholder workshops, and mentor teams on product
         thinking.
       </p>
-      <a
-        class="kgbutton no-print"
-        href="/KristofGatterCV.pdf"
-        download="Kristof Gatter CV.pdf">Download as PDF</a
-      >
     </section>
 
     <h2>Work Experience as an Employee</h2>
@@ -435,14 +436,8 @@ import Layout from "../../layouts/Layout.astro";
     display: none;
   }
 
-  .intro {
-    padding: 2em 0;
-    & p {
-      font-size: var(--fontSizeM);
-    }
-    & .kgbutton {
-      margin-top: 1em;
-    }
+  main > .kgbutton {
+    margin-top: 1em;
   }
 
   .job {
@@ -525,7 +520,7 @@ import Layout from "../../layouts/Layout.astro";
       display: none !important;
     }
     .print-only {
-      display: flex;
+      display: block;
     }
     main {
       /* Redefining the site's font-size custom props here cascades to all
@@ -537,6 +532,7 @@ import Layout from "../../layouts/Layout.astro";
       line-height: 1.45;
     }
     .cv-header {
+      display: flex;
       justify-content: space-between;
       align-items: flex-start;
       font-size: 12px;
