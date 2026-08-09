@@ -44,6 +44,7 @@ import Layout from "../../layouts/Layout.astro";
           href="mailto:mail@kristofgatter.com?subject=Requesting a Portfolio&body=I'm interested in more of your work. Please send me a PDF portfolio."
           class="kgbutton">Request a Portfolio</a
         >
+        <a href="/cv" class="kgbutton purple">My CV</a>
       </div>
     </header>
     <section class="work-item">
@@ -439,6 +440,10 @@ import Layout from "../../layouts/Layout.astro";
 
     & .kgbutton {
       margin-bottom: 0;
+      margin-right: 0.5em;
+      @media (max-width: 684px) {
+        margin-bottom: 0.5em;
+      }
     }
     & h1 {
       max-width: 20em;
