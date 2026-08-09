@@ -459,6 +459,9 @@ import Layout from "../../layouts/Layout.astro";
     & h3 {
       font-size: var(--fontSizeM);
       font-weight: 500;
+      /* Kill the UA default margin-top so the company name shares the
+         first bullet's baseline across the two columns. */
+      margin-top: 0;
       margin-bottom: 0.5em;
     }
     & .stint {
