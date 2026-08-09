@@ -26,9 +26,12 @@ import Layout from "../layouts/Layout.astro";
       integrated, agile design and development process.<br /><br />I believe
       that user research, understanding strategic goals and working closely with
       developers and other stakeholders are all equally important in achieving
-      the best results.
+      the best results.<br /><br />That closeness no longer ends at the team
+      level: with today's tooling, delivering a feature end-to-end and defining
+      things directly in code is now simply part of a designer's job.
     </p>
     <a href="/work" class="kgbutton purple">Read More About My Work</a>
+    <a href="/cv" class="kgbutton">Check out my CV</a>
     <p>
       Despite being a designer first, over the course of my career I have
       accumulated a lot of experience in mentoring – using design thinking
@@ -42,12 +45,14 @@ import Layout from "../layouts/Layout.astro";
     <h2>References</h2>
     <h3>Brands I Have Worked For</h3>
     <img
+      class="logos"
       width="100%"
       src="/images/workedfor.png"
       alt="Mercedes-Benz, Modulor, solarisBank, Cantinio, Avec, Red Bull, DroidCon, Innogy Stiftung, Grace Accelerator, Kraftwerk City Accelerator Bremen, Golem.DE, Zuper, Zeiss, Wired Campus, EWE, eBay"
     />
     <h3>Agencies I Have Worked With</h3>
     <img
+      class="logos"
       width="100%"
       src="/images/workedwith.png"
       alt="HackerBay, DesignIt, Ignore Gravity, Beluga Strategic Design, OX Collective"
@@ -78,6 +83,13 @@ import Layout from "../layouts/Layout.astro";
       font-size: var(--fontSizeL);
       margin-top: 1em;
       margin-bottom: 5em;
+    }
+
+    & .kgbutton {
+      margin-right: 0.5em;
+      @media (max-width: 684px) {
+        margin-bottom: 1em;
+      }
     }
   }
 
@@ -137,9 +149,18 @@ import Layout from "../layouts/Layout.astro";
   img.portrait {
     width: 250px;
     height: 250px;
+    /* The PNG is a circle baked onto a white square — mask it to a real
+       circle so no white corners show in dark mode. */
+    border-radius: 50%;
   }
 
   img {
     max-width: 843px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    img.logos {
+      filter: invert(1);
+    }
   }
 </style>
